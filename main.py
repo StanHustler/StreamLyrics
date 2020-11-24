@@ -3,6 +3,7 @@ import sys
 import getopt
 import Get
 import out
+import Post
 
 
 def logo():
@@ -39,7 +40,7 @@ def main(argv):
                 clierror()
                 sys.exit(2)
             else:
-                opts, args = getopt.getopt(argv, "po:", ["print", "ofile="])
+                opts, args = getopt.getopt(argv, "so:p", ["show", "ofile=", "post"])
 
         lyrics = Get.getlyrics(sys.argv[1], sys.argv[2])
 
@@ -48,12 +49,20 @@ def main(argv):
         sys.exit(2)
 
     for opt, arg in opts:
-        if opt in ("-p", "--print"):
+        if opt in ("-s", "--show"):
             print(lyrics)
         elif opt in ("-o", "--ofile"):
             out.out(arg, lyrics)
+        elif opt in ("-p", "--post"):
+            try:
+                for i in range(0, 100):
+                    print(i)
+                    Post.post(lyrics.splitlines()[i])
+                    input("")
+            except:
+                print("输出完成")
 
 
 if __name__ == "__main__":
-    # logo()
+    logo()
     main(sys.argv[3:])
