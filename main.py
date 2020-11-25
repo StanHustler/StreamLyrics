@@ -56,9 +56,8 @@ def main(argv):
         elif opt in ("-p", "--post"):
             try:
                 for i in range(0, 100):
-                    print(i)
+                    input(i + 1)
                     Post.post(lyrics.splitlines()[i])
-                    input("")
             except:
                 print("输出完成")
 
