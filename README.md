@@ -21,4 +21,4 @@ There is another options:
 [-p,--post]post lyrics to live room    
 [-s,--show]print  lyrics to screen
 ## LICENCE
-[MPL-2.0 License](/StanHustler/StreamLyrics/blob/main/LICENSE)
+[MPL-2.0 License](LICENSE)
