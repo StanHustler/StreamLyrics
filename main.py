@@ -4,6 +4,7 @@ import getopt
 import Get
 import out
 import Post
+import Copy
 
 
 def logo():
@@ -40,7 +41,7 @@ def main(argv):
                 clierror()
                 sys.exit(2)
             else:
-                opts, args = getopt.getopt(argv, "so:p", ["show", "ofile=", "post"])
+                opts, args = getopt.getopt(argv, "so:pc", ["show", "ofile=", "post", "copy"])
 
         lyrics = Get.getlyrics(sys.argv[1], sys.argv[2])
 
@@ -58,6 +59,13 @@ def main(argv):
                 for i in range(0, 100):
                     input(i + 1)
                     Post.post(lyrics.splitlines()[i])
+            except:
+                print("输出完成")
+        elif opt in ("-c", "--copy"):
+            try:
+                for i in range(0, 100):
+                    Copy.inputtxt(lyrics.splitlines()[i])
+                    input(i + 1)
             except:
                 print("输出完成")
 
