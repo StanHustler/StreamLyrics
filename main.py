@@ -58,13 +58,15 @@ def main(argv):
             try:
                 for i in range(0, 100):
                     input(i + 1)
-                    Post.post("🎵" + lyrics.splitlines()[i][10:].replace(" ", ""))
+                    Post.post("♬" + lyrics.splitlines()[i][10:].replace(" ", ""))
+                    print("♬" + lyrics.splitlines()[i][10:].replace(" ", ""))
             except:
                 print("输出完成")
         elif opt in ("-c", "--copy"):
             try:
                 for i in range(1, 100):
                     Copy.inputtxt("🎵" + lyrics.splitlines()[i][10:].replace(" ", ""))
+                    print("🎵" + lyrics.splitlines()[i][10:].replace(" ", ""))
                     input(i + 1)
             except:
                 print("输出完成")
